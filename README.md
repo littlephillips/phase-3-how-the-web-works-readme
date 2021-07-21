@@ -122,9 +122,12 @@ You can learn more about the [anatomy of a URL from MDN][url anatomy].
 
 When making a web request, in addition to the path, you also need to specify the
 action you would like the server to perform. We do this using
-[**HTTP Verbs**][verbs], also referred to as the **request method**. We can use
-the same path for multiple actions, so it is the **combination** of the path and
-the HTTP verb (method) that _fully_ describes the request.
+[**HTTP Verbs**][verbs], also referred to as **request methods**. We can use the
+same path for multiple actions, so it is the **combination** of the path and the
+HTTP verb (method) that _fully_ describes the request. For example, making a
+**POST** request to `/learn-co-curriculum/phase-3-how-the-web-works-readme`
+tells the server something different from making a **GET** request to
+`/learn-co-curriculum/phase-3-how-the-web-works-readme`.
 
 **GET** requests are the most common browser requests. This just means "hey
 server, please _GET_ me this resource", i.e., load this web page. Other verbs
@@ -187,8 +190,8 @@ JavaScript files, videos, music, etc.
 When the client makes a request, it includes additional "metadata" about the
 request, besides just the URL, in the **request headers**. The request headers
 contain all the information the server needs in order to fulfill the request:
-the HTTP verb, the resource (path), and the domain, as well as some other
-metadata. The request header would look something like this:
+the HTTP verb (method), the resource (path), and the domain (authority), as well
+as some other metadata. The request headers look something like this:
 
 ![request headers](https://curriculum-content.s3.amazonaws.com/phase-3/how-the-web-works-readme/request-headers.png)
 
@@ -213,7 +216,7 @@ that HTML/CSS that you see! Most of the data of a response is in the body, not
 in the headers.
 
 The body of the request can come in many different formats. For a website, the
-format will be HTML. For a web API, the format will probably be JSON (JavaScrip
+format will be HTML. For a web API, the format will probably be JSON (JavaScript
 Object Notation) or XML (eXtensible Markup Language), which are useful formats
 for transmitting structured data. In all cases, the **body** of the HTTP
 response is **just a string of text** — it's up to the client to use that string
@@ -225,7 +228,8 @@ into another format.
 The primary way that a human user knows that a web request was successful is
 that the page loads without any errors. However, you can also tell a request was
 successful if you see that the response header's status code is `200`. You've
-probably seen another common status code, `404`. This means "file not found."
+probably seen another common status code, `404`. This means "resource not
+found."
 
 Status codes are separated into categories based on their first digit. Here are
 the different categories:
