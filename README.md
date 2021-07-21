@@ -21,13 +21,13 @@ the web.
 
 So seriously, how does this:
 
-```text
-https://www.youtube.com/user/AdeleVEVO
+```txt
+https://github.com/learn-co-curriculum/phase-3-how-the-web-works-readme
 ```
 
 Turn into this:
 
-![AdeleVEVO](https://s3.amazonaws.com/learn-verified/request-intro.png)
+![Github Readme](https://curriculum-content.s3.amazonaws.com/phase-3/how-the-web-works-readme/github-readme.png)
 
 The internet operates based on conversations between the client (more familiarly
 known as the browser) and the server (the code running the web site you're
@@ -50,26 +50,26 @@ your browser doesn't know, nor does it care, what server it talks to. How does
 that work? How can a server that was written 15 years ago still work with a
 browser written 15 months or days ago?
 
-In addition, you can use multiple clients! You can use Chrome, Safari, Internet
-Explorer, Opera, and many others. All of those browsers are able to talk to the
-same server. Let's take a closer look at how this occurs.
+In addition, you can use multiple clients! You can use Chrome, Safari, Firefox,
+Edge, and many others. All of those browsers are able to talk to the same
+servers. Let's take a closer look at how this occurs.
 
 ## HTTP Overview
 
-Being able to switch out both the server and the client happens because the way
-browsers and servers talk is controlled by a contract, or _protocol_.
-Specifically, it is a protocol created by Tim Berners-Lee called the **H**yper
-**T**ext **T**ransfer **P**rotocol or HTTP. Your server will receive requests
-from the browser that follow HTTP. It then responds with an HTTP response that
-all browsers are able to parse.
+Communication between different clients and different servers is only possible
+because the way browsers and servers talk is controlled by a contract, or
+_protocol_. Specifically, it is a protocol created by
+[Tim Berners-Lee][sir tim] called **Hyper Text Transfer Protocol**, or HTTP.
+Your server will receive requests from the browser that follow HTTP. It then
+responds with an HTTP response that all browsers are able to parse.
 
-`HTTP` is the language browsers speak. Every time you load a web page, you are
-making an `HTTP` request to the site's server, and the server sends back an
-`HTTP` response. When you use `fetch` in JavaScript, you are also making an HTTP
-request.
+HTTP is the "language" browsers speak. Every time you load a web page, you are
+making an HTTP **request** to the site's server, and the server sends back an
+HTTP **response**. When you use `fetch` in JavaScript, you are also making an
+HTTP request.
 
-In the example above, the client is making an `HTTP GET request` to YouTube's
-server. YouTube's server then sends back a response and the client renders the
+In the example above, the client is making an **HTTP GET request** to GitHub's
+server. GitHub's server then sends back a response and the client renders the
 page in the browser.
 
 ![computer server](https://curriculum-content.s3.amazonaws.com/how-the-web-works/Image_17_ComputerServer.png)
@@ -79,41 +79,42 @@ page in the browser.
 ### URI
 
 When you make a request on the web, how do you know where to send it? This is
-done through **U**niform **R**esource **L**ocators, or URLs. You've probably
-also heard these referred to as URIs (Uniform Resource Identifiers). Both are
+done through **Uniform Resource Locators**, or URLs. You may have also heard
+these addresses referred to as URIs (Uniform Resource Identifiers). Both are
 fine. Let's look at the URL we used up top:
 
 ```txt
-http://www.youtube.com/user/adelevevo
+https://github.com/learn-co-curriculum/phase-3-how-the-web-works-readme
 ```
 
 This URL is broken into three parts:
 
-- `http` - the protocol
-- `youtube.com` - the domain name
-- `/user/adelevevo` - the path
+- `https` - the protocol
+- `github.com` - the domain name
+- `/learn-co-curriculum/phase-3-how-the-web-works-readme` - the path
 
-The **protocol** is the way we're sending our request. There are several
-different types of internet protocols (SMTP for emails, HTTPS for secure
+The **protocol** is the format we're using to send our request. There are
+several different types of internet protocols (SMTP for emails, HTTPS for secure
 requests, FTP for file transfers). To load a website, we use HTTP or HTTPS.
 
 The **domain name** is a string of characters that identifies the unique location
 of the web server that hosts that particular website. This will be things like
 `youtube.com` and `google.com`.
 
-The **path** is the particular part of the website we want to load. YouTube has
-millions and millions of channels and videos, so we need to identify the
-specific resource we want using the path: `/user/adelevevo` (because we can't
-get Hello out of our heads).
+The **path** is the particular part of the website we want to load. GitHub has
+millions and millions of users and repositories, so we need to identify the
+specific resource we want using the path:
+`/learn-co-curriculum/phase-3-how-the-web-works-readme`.
 
-An analogy that works well is an apartment building. The domain is the entire
-building. Within that building, though, there are hundreds of apartments. We use
-the specific path (also called a resource) to indicate that we care about
-apartment 4E. The numbering/lettering system is different for every apartment
-building, just as the resources are laid out a bit differently for every
-website. For example, if we search for "URI" using Google, the path looks like
-this: `https://www.google.com/search?q=URI`. If we use Facebook to execute the
-same search, it looks like this: `https://www.facebook.com/search/top/?q=uri`.
+For an analogy for how a URL works, think about an apartment building. The
+**domain** is the entire building. Within that building, though, there are
+hundreds of apartments. We use the specific **path** (also called a resource) to
+indicate that we care about apartment 4E. The numbering/lettering system is
+different for every apartment building, just as the resources are laid out a bit
+differently for every website. For example, if we search for "URI" using Google,
+the path looks like this: `https://www.google.com/search?q=URI`. If we use
+Facebook to execute the same search, it looks like this:
+`https://www.facebook.com/search/top/?q=uri`.
 
 You can learn more about the [anatomy of a URL from MDN][url anatomy].
 
@@ -123,11 +124,11 @@ When making a web request, in addition to the path, you also need to specify the
 action you would like the server to perform. We do this using
 [**HTTP Verbs**][verbs], also referred to as the **request method**. We can use
 the same path for multiple actions, so it is the **combination** of the path and
-the HTTP verb (method) that fully describes the request.
+the HTTP verb (method) that _fully_ describes the request.
 
-`GET` requests are the most common browser requests. This just means "hey
-server, please GET me this resource", i.e., load this web page. Other verbs are
-used if we want to send some data from the user to the server, or modify or
+**GET** requests are the most common browser requests. This just means "hey
+server, please _GET_ me this resource", i.e., load this web page. Other verbs
+are used if we want to send some data from the user to the server, or modify or
 delete existing data. Below is a list of the available HTTP Verbs and what each
 is used for by convention. We will learn about them a bit later:
 
@@ -159,7 +160,7 @@ is used for by convention. We will learn about them a bit later:
   </tr>
   <tr>
     <td>HEAD</td>
-    <td>Asks for a response like a GET but without the body</td>
+    <td>Asks for a response (like a GET but without the body)</td>
   </tr>
   <tr>
     <td>TRACE</td>
@@ -177,33 +178,35 @@ is used for by convention. We will learn about them a bit later:
 
 ### Request Format
 
-Our client so far has made a request to YouTube's server. In this case, a GET
-request to `/user/adelevevo`. The server then responds with all the code
-associated with that resource (everything between `<!doctype html>` and
-`</html>`), including all images, CSS files, JavaScript files, videos, music,
-etc.
+Our client so far has made a request to GitHub's server. In this case, a GET
+request to `/learn-co-curriculum/phase-3-how-the-web-works-readme`. The server
+then responds with all the code associated with that resource (everything
+between `<!doctype html>` and `</html>`), including all images, CSS files,
+JavaScript files, videos, music, etc.
 
-When the client makes a request, it includes other items besides just the URL in
-the "headers." The request header contains all the information the server needs
-in order to fulfill the request: the type of request, the resource (path), and
-the domain, as well as some other metadata. The request header would look
-something like this:
+When the client makes a request, it includes additional "metadata" about the
+request, besides just the URL, in the **request headers**. The request headers
+contain all the information the server needs in order to fulfill the request:
+the HTTP verb, the resource (path), and the domain, as well as some other
+metadata. The request header would look something like this:
 
-![request header](https://s3.amazonaws.com/learn-verified/request-header.png)
+![request headers](https://curriculum-content.s3.amazonaws.com/phase-3/how-the-web-works-readme/request-headers.png)
 
 ## Responses
 
-Once your server receives the request, it will do some processing (run code you
-wrote!) and then send a response back. The server's response is separated into
-two sections: the headers and the body.
+Once a server receives the request, it will do some processing (when you write
+the servers, that means it'll run code you wrote!) and then send a response
+back. The server's response is separated into two sections: the **headers** and
+the **body**.
 
-The server's response headers look something like this:
+The server's **response headers** look something like this:
 
-![response header](https://s3.amazonaws.com/learn-verified/response-headers.png)
+![response headers](https://curriculum-content.s3.amazonaws.com/phase-3/how-the-web-works-readme/response-headers.png)
 
 The headers contain all of the metadata about the response. This includes things
-like content-length (how big is my response) and what type of content it is. The
-headers also include the status code of the response.
+like `content-length` (how big is my response) and what the `content-type` of
+content it is (is it HTML? JSON? an image?). The headers also include the
+**status code** of the response.
 
 The **body** of the response is what you see rendered on the page. It is all of
 that HTML/CSS that you see! Most of the data of a response is in the body, not
@@ -257,6 +260,7 @@ how the database comes into play when building our server.
 - [HTTP Verbs (Methods)][verbs]
 - [HTTP Status Codes][codes]
 
+[sir tim]: https://www.w3.org/People/Berners-Lee/
 [url anatomy]: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL
 [verbs]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
 [codes]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
