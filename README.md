@@ -7,7 +7,6 @@
 - Explain the nature of request and response
 - Define a static site vs. a dynamic site
 
-
 ## Introduction
 
 How many times a day do you use the internet? How many times do you load a
@@ -77,7 +76,7 @@ page in the browser.
 
 ## Requests
 
-### URI
+### URL
 
 When you make a request on the web, how do you know where to send it? This is
 done through **Uniform Resource Locators**, or URLs. You may have also heard
