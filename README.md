@@ -7,6 +7,7 @@
 - Explain the nature of request and response
 - Define a static site vs. a dynamic site
 
+
 ## Introduction
 
 How many times a day do you use the internet? How many times do you load a
