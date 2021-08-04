@@ -135,49 +135,17 @@ are used if we want to send some data from the user to the server, or modify or
 delete existing data. Below is a list of the available HTTP Verbs and what each
 is used for by convention. We will learn about them a bit later:
 
-<table border="1" cellpadding="4" cellspacing="0">
-  <tr>
-    <th>Verb</th>
-    <th>Description</th>
-  </tr>
-  
-  <tr>
-    <td>GET</td>
-    <td>Retrieves a representation of a resource</td>
-  </tr>
-  <tr>
-    <td>POST</td>
-    <td>Create a new resource using data in the body of the request</td>
-  </tr>
-  <tr>
-    <td>PUT</td>
-    <td>Update an existing resource using data in the body of the request</td>
-  </tr>
-  <tr>
-    <td>PATCH</td>
-    <td>Update part of an existing resource using data in the body of the request</td>
-  </tr>
-  <tr>
-    <td>DELETE</td>
-    <td>Deletes a specific resource</td>
-  </tr>
-  <tr>
-    <td>HEAD</td>
-    <td>Asks for a response (like a GET but without the body)</td>
-  </tr>
-  <tr>
-    <td>TRACE</td>
-    <td>Echoes back the received request</td>
-  </tr>
-  <tr>
-    <td>OPTIONS</td>
-    <td>Returns the HTTP methods the server supports</td>
-  </tr>
-  <tr>
-    <td>CONNECT</td>
-    <td>Converts the request to a TCP/IP tunnel (generally for SSL)</td>
-  </tr>
-</table>
+| Verb | Description |
+| --- | --- |
+| GET | Retrieves a representation of a resource |
+| POST | Create a new resource using data in the body of the request |
+| PUT | Update an existing resource using data in the body of the request |
+| PATCH | Update part of an existing resource using data in the body of the request |
+| DELETE | Deletes a specific resource |
+| HEAD | Asks for a response (like a GET but without the body) |
+| TRACE | Echoes back the received request |
+| OPTIONS | Returns the HTTP methods the server supports |
+| CONNECT | Converts the request to a TCP/IP tunnel (generally for SSL) |
 
 ### Request Format
 
