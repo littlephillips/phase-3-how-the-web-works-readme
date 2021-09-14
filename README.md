@@ -3,9 +3,9 @@
 ## Learning Goals
 
 - Define a client and server
+- Define a static site vs. a dynamic site
 - Explain what an HTTP request is
 - Explain the nature of request and response
-- Define a static site vs. a dynamic site
 
 ## Introduction
 
@@ -34,6 +34,19 @@ known as the browser) and the server (the code running the web site you're
 trying to load). By typing in that URL into your browser, you (the client) are
 _requesting_ a web page. The server then receives the request, processes it, and
 sends a _response_. Your browser receives that response and shows it to you.
+
+The simplest kind of websites are known as [**static** websites][static web page],
+which typically means sites that store all their content in pre-built HTML files
+that are saved to the file system and sent back when a client makes a request for
+that specific file.
+
+Static websites are still quite common on the web, but there's also a large portion
+of the web that is [**dynamic**][dynamic web page]. With dynamic pages, the content
+returned from an HTTP request isn't derived from just an HTML file, but instead is
+processed by some code running on the server before it's sent back to the client.
+
+[static web page]: https://en.wikipedia.org/wiki/Static_web_page
+[dynamic web page]: https://en.wikipedia.org/wiki/Dynamic_web_page
 
 These are the fundamentals of the web. Browsers send requests, and servers send
 responses. Until today, you have always been a client. Moving forward, you will
