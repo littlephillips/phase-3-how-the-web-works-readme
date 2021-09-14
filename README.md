@@ -176,7 +176,7 @@ The server's **response headers** look something like this:
 
 The headers contain all of the metadata about the response. This includes things
 like `content-length` (how big is my response) and what the `content-type` of
-content it is (is it HTML? JSON? an image?). The headers also include the
+the content is (is it HTML? JSON? an image?). The headers also include the
 **status code** of the response.
 
 The **body** of the response is what you see rendered on the page. It is all of
@@ -205,7 +205,7 @@ the different categories:
 - 100's - informational
 - 200's - success
 - 300's - redirect
-- 400's - error
+- 400's - client error
 - 500's - server error
 
 There are a number of other status codes and it's good to get familiar with
